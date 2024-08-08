@@ -27,8 +27,90 @@ This document provides a comprehensive guide to implement a resuable and customi
     - Field `disabledButtonColor` will adjust the color of the button when it is disabled.
     - Field `disabledTextColor` will adjust the color of the text when it is disabled.
 - Enabled/Disabled State
+    - Field `enabled` will either enable or disable the button from being used.
 
-## API
+## API Details
+
+### Top Level Button Properties
+
+- **text: String**
+    - **Description**: The text to be displayed on the button.
+    - **Type**: `String`
+    - **Default**: `Must be provided`
+    - **Example**: `"Button Text"`
+
+- **onClick: () -> Unit**
+    - **Description**: The callback function to be invoked when the button is clicked.
+    - **Type**: `() -> Unit`
+    - **Default**: `Must be provided`
+    - **Example**: `{ /* Handle click */ }`
+
+- **buttonConfig: ButtonConfig**
+    - **Description**: Configuration options for the button's appearance and behavior.
+    - **Type**: `ButtonConfig`
+    - **Default**: `ButtonConfig Defaults`
+
+### ButtonConfig Properties
+
+- **enabled: Boolean**
+    - **Description**: Indicates whether the button is enabled or disabled.
+    - **Type**: `Boolean`
+    - **Default**: `true`
+    - **Example**: `false`
+
+- **textSize: TextUnit**
+    - **Description**: The size of the text on the button.
+    - **Type**: `TextUnit`
+    - **Default**: `16.sp`
+    - **Example**: `20.sp`
+
+- **useBoldText: Boolean**
+    - **Description**: Indicates whether the text should be bold.
+    - **Type**: `Boolean`
+    - **Default**: `false`
+    - **Example**: `true`
+
+- **textPadding: Dp**
+    - **Description**: The padding around the text inside the button.
+    - **Type**: `androidx.compose.ui.unit.Dp`
+    - **Default**: `8.dp`
+    - **Example**: `16.dp`
+
+- **buttonShape: ButtonShape**
+    - **Description**: The shape of the button. Can be `RECTANGLE`, `ROUNDED_CORNER`, or `CIRCLE`.
+    - **Type**: `enum ButtonShape`
+    - **Default**: `ButtonShape.ROUNDED_CORNER`
+    - **Example**: `ButtonShape.RECTANGLE`
+
+- **buttonCornerModifier: Dp**
+    - **Description**: The corner radius for rounded corner shapes.
+    - **Type**: `androidx.compose.ui.unit.Dp`
+    - **Default**: `4.dp`
+    - **Example**: `8.dp`
+
+- **buttonColor: Color**
+    - **Description**: The background color of the button.
+    - **Type**: `androidx.compose.ui.graphics.Color`
+    - **Default**: `Color.Unspecified`
+    - **Example**: `Color.Red`
+
+- **textColor: Color**
+    - **Description**: The color of the text content on the button.
+    - **Type**: `androidx.compose.ui.graphics.Color`
+    - **Default**: `Color.Unspecified`
+    - **Example**: `Color.Black`
+
+- **disabledTextColor: Color**
+    - **Description**: The color of the text when the button is disabled.
+    - **Type**: `androidx.compose.ui.graphics.Color`
+    - **Default**: `Color.Unspecified`
+    - **Example**: `Color.LightGray`
+
+- **disabledContainerColor: Color**
+    - **Description**: The background color of the button when it is disabled.
+    - **Type**: `androidx.compose.ui.graphics.Color`
+    - **Default**: `Color.Unspecified`
+    - **Example**: `Color.DarkGray`
 
 ### Usage Example
 
@@ -53,3 +135,9 @@ HebButton(
 )
 ````
 
+## Future Work
+- Allow custom font of text within button
+- Allow small image to be placed in the button.
+- Additional modifications for the shape of the button.
+- More styles of button. ex: Outlined button, Borderless button
+- Allow the user to pass a specific `TextStyle` for the text.
